@@ -1,0 +1,246 @@
+<?php
+
+class Reel
+{
+	private $_id;
+	private $_theater_id;
+	private $_priority;
+	private $_url;
+	private $_thumb_url;
+	private $_user_id;
+<<<<<<< .mine
+	private $_title;
+=======
+	private $_upvotes;
+	private $_downvotes;
+>>>>>>> .r166
+	
+	public function Id()
+	{
+		return $this->_id;
+	}
+	
+	public function Upvotes($upvotes)
+	{
+		if($upvotes)
+			$this->_upvotes=$upvotes;
+		return $this->_upvotes;
+	}
+	
+	
+	public function Downvotes($downvotes)
+	{
+		if($downvotes)
+			$this->_downvotes=$downvotes;
+		return $this->_downvotes;
+	}
+	
+	public function TheaterId($theater_id)
+	{
+		if($theater_id)
+		{
+			$this->_theater_id = $theater_id;
+		}
+		return $this->_theater_id;
+	}
+	
+	public function ThumbUrl($thumbUrl) {
+		if($thumbUrl) {
+			$this->_thumb_url = $thumbUrl;
+		}
+		return $this->_thumb_url;
+	}
+	
+	public function Title($title) {
+		if($title) {
+			$this->_title = $title;
+		}
+		return $this->_title;
+	}
+	
+	public function Priority($priority)
+	{
+		if($priority)
+		{
+			$this->_priority = $priority;
+		}
+		return $this->_priority;
+	}
+	
+	public function Url($url)
+	{
+		if($url)
+		{
+			$this->_url = $url;
+		}
+		return $this->_url;
+	}
+	
+	public function UserId($user_id)
+	{
+		if($user_id)
+		{
+			$this->_user_id = $user_id;
+		}
+		return $this->_user_id;
+	}
+	
+<<<<<<< .mine
+	
+=======
+>>>>>>> .r166
+	public function AddVideo() 
+	{
+		
+		if($this->_theater_id && $this->_priority && $this->_url
+			&& $this->_user_id && $this->_thumb_url && $this->_title)
+		{
+			$preparedStatement = DB::Prepare( // defined in connection.php
+					"INSERT INTO reels (theater_id,priority,url,user_id, thumb_url, title) " .
+					"VALUES (:theater_id, :priority, :url, :user_id, :thumb_url, :title)");
+			$successful = $preparedStatement->execute(array( ':theater_id' => $this->_theater_id,
+				 ':priority' => $this->_priority, ':url'=> $this->_url, ':user_id'=>$this->_user_id,
+				':thumb_url' => $this->_thumb_url, ':title' => $this->_title));
+			if ($successful) {
+				$this->_id = (int)DB::LastInsertId();
+				return $this->_id;
+			}
+			else
+			{
+				return NULL;
+			}
+		} else {
+			echo('not saving');
+		}
+	}
+	
+	public function GetDownvotes()
+	{
+		$preparedStatement = DB::Prepare( // defined in connection.php
+				"SELECT downvotes " .
+				"FROM reels " .
+				"WHERE id =:id ".
+				"AND theater_id = :theatreId ".
+				"ORDER BY id LIMIT 1");
+		$successful = $preparedStatement->execute(array( ":id" => $this->_id, ":theatreId" => $this->_theater_id));
+		$row = $preparedStatement->fetch(PDO::FETCH_ASSOC);
+		return $row;
+	}
+	
+	public function GetUpvotes()
+	{
+		$preparedStatement = DB::Prepare( // defined in connection.php
+				"SELECT upvotes " .
+				"FROM reels " .
+				"WHERE id =:id ".
+				"AND theater_id = :theatreId ".
+				"ORDER BY id LIMIT 1");
+		$successful = $preparedStatement->execute(array( ":id" => $this->_id, ":theatreId" => $this->_theater_id));
+		$row = $preparedStatement->fetch(PDO::FETCH_ASSOC);
+		return $row;
+	}
+	
+	public static function GetNextByTheatreId($prevReelId, $theatreId)
+	{
+		$preparedStatement = DB::Prepare( // defined in connection.php
+				"SELECT * " .
+				"FROM reels " .
+				"WHERE id > :prevReelId ".
+				"AND theater_id = :theatreId ".
+				"ORDER BY id LIMIT 1");
+		$successful = $preparedStatement->execute(array( ":prevReelId" => $prevReelId, ":theatreId" => $theatreId));
+		if($preparedStatement->rowCount()==0)
+		{
+			$preparedStatement = DB::Prepare( // defined in connection.php
+					"SELECT * " .
+					"FROM reels " .
+					"WHERE theater_id = :theatreId " .
+					"ORDER BY id LIMIT 1");
+			$successful = $preparedStatement->execute(array(":theatreId" => $theatreId));
+		}
+		$row = $preparedStatement->fetch(PDO::FETCH_ASSOC);
+		if($row) {
+			$reel = new Reel();
+			$reel->_id = $row['id'];
+			$reel->_theater_id = $row['theater_id'];
+			$reel->_priority = $row['priority'];
+			$reel->_url = $row['url'];
+			$reel->_user_id = $row['user_id'];
+			if(isset($row['thumb_url'])) {
+					$reel->_thumb_url = $row['thumb_url'];
+			} 
+			if(isset($row['title'])) {
+				$reel->_title = $row['title'];
+			}
+			return $reel;
+		} else {
+			return NULL;
+		}
+	}
+	
+	public static function FindById($id) {
+		if($id) {
+			$preparedStatement = DB::Prepare( // defined in connection.php
+				"SELECT id, theater_id, priority, url, user_id FROM reels " .
+				"WHERE id = :id");
+			$successful = $preparedStatement->execute(array(':id' => $id));
+			$row = $preparedStatement->fetch(PDO::FETCH_ASSOC);
+			if($row) {
+				$reel = new Reel();
+				$reel->_id = $row['id'];
+				$reel->_theater_id = $row['theater_id'];
+				$reel->_priority = $row['priority'];
+				$reel->_url = $row['url'];
+				$reel->_user_id = $row['user_id'];
+				if(isset($row['thumb_url'])) {
+					$reel->_thumb_url = $row['thumb_url'];
+				} 
+				if(isset($row['title'])) {
+					$reel->_title = $row['title'];
+				}
+				return $reel;
+			} else {
+				return NULL;
+			}
+		}
+		return NULL;
+	}
+	
+	public static function FindByTheaterId($theater_id)
+	{
+		$preparedStatement = DB::Prepare( // defined in connection.php
+							"SELECT * FROM reels " .
+							"WHERE theater_id=:theater_id");
+		$successful = $preparedStatement->execute(array(':theater_id' => $theater_id));
+		$rows = $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
+		$reels = array();
+		if($rows) {
+			foreach($rows as $row) {
+				$reel = new Reel();
+				$reel->_id = $row['id'];
+				$reel->_theater_id = $row['theater_id'];
+				$reel->_priority = $row['priority'];
+				$reel->_url = $row['url'];
+				$reel->_user_id = $row['user_id'];
+				if(isset($row['thumb_url'])) {
+					$reel->_thumb_url = $row['thumb_url'];
+				} 
+				if(isset($row['title'])) {
+					$reel->_title = $row['title'];
+				}
+				
+				$reels[] = $reel;
+			}
+		}
+		return $reels;
+	}
+	
+	public static function RemoveVideo()
+	{
+		$preparedStatement = DB::Prepare( // defined in connection.php
+				"DELETE FROM reels" .
+				"WHERE url=:url AND theater_id=:theater_id");
+		$successful = $preparedStatement->execute(array( ':url' => $this->_url,
+					 ':theater_id' => $this->_theater_id));
+	}
+}

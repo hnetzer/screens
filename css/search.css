@@ -1,0 +1,129 @@
+@CHARSET "ISO-8859-1";
+
+.body_style
+{
+	background-color: #B22222; /* #669999  */
+	margin:0; 
+	height:100%;
+	padding:0;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+.top_bar {
+	width:  100%;
+	height:  70px;
+	background-color:  #1a1a1a;
+
+}
+
+#logo
+{
+	margin-top:  15px;
+	margin-left:  30px;
+}
+
+.username
+{
+	font-family:  Ravvi;
+	color:  #ffffff;
+	margin-right:  10px;
+}
+.main_box
+{
+    width: 700px;
+    background-color: #f8f8f8;
+    height: 100%;
+    margin-top:  0px;
+    margin-left:  auto;
+    margin-right:  auto;
+    color:  #4d4d4d;
+	
+}
+
+.main_content{
+	margin-left:  20px;	
+}
+
+.sign_out
+{
+	margin-top:  2%;
+	font-size:  90%;
+	color:  #f8f8f8;
+}
+
+.sign_out:hover
+{
+	color:#e1e1e1;
+	cursor:pointer;
+}
+
+.theatreInList {
+	padding-top:10px;
+	padding-left:20px;
+	padding-righ:20px;
+	margin:3px;
+	background-color:#e5e5e5;
+	width:95%;
+	height:70px;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 120%;	
+}
+
+.theatre_header {
+	font-size:40px;
+	color:#708090;
+	font-weight:bold;
+	width:400px;
+	
+}
+
+.create_new_button_wrapper {
+	float:right;
+}
+
+.theatre_section_top {
+	width:640px;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.theatre_content {
+	padding:5px;	
+}
+
+
+.theatreInList:hover {
+	cursor:pointer;
+	color: #000;	
+	background-color:#708090;
+}
+.topic_container {
+	float:right;
+	width:550px;
+	font-size:25px;
+}
+
+.desc_container {
+	font-size:14px;	
+}
+
+
+.reel_count_container {
+	width:80px;
+	float:left;	
+	font-size:13px;
+}
+
+.reel_count_num {
+	font-size:40px;	
+}
+
+
+.name{
+	font-size: 120%;
+	font-family:  Ravii;
+	color:  #AFD76B;	
+}

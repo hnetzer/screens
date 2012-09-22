@@ -1,0 +1,477 @@
+@CHARSET "ISO-8859-1";
+
+.body_style
+{
+	background-color:  #080808;/*#669999;*/ 
+	margin:0; 
+	height:100%;
+	padding:0;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	
+}
+
+.top_bar {
+	width:  100%;
+	height:  50px;
+	background-color:  #080808;
+
+}
+
+.mute_button_off {
+	background-image: url("../images/sound_on_no_hover.png");
+	height:30px;
+	width:30px;	
+}
+
+.mute_button_off:hover {
+	background-image: url("../images/sound_on_hover.png");
+	cursor:pointer;
+}
+
+.mute_button_on {
+	background-image: url("../images/sound_off_no_hover.png");
+	height:30px;
+	width:30px;	
+}
+
+.mute_button_on:hover {
+	background-image: url("../images/sound_off_hover.png");
+	cursor:pointer;
+}
+
+.lobby_link
+{
+	margin-top:15px;
+	margin-right:10px;
+	margin-left:10px;
+	font-size:  14px;
+	color:  #ddd;
+}
+
+.lobby_link:hover 
+{
+	color:#AFD76B;
+	cursor:pointer;
+}
+
+.login_or_sign_up {
+	padding:5px;
+	color:#fff;
+	font-size:11px;	
+	margin-left:18px;
+}
+
+.sign_out_link {
+	margin-right:15px;
+	font-size:  14px;
+	color:  #ddd;
+}
+
+.sign_out_link:hover {
+	color:red;
+	cursor:pointer;
+}
+
+
+.voted{
+	
+	color:  #ffffff;
+	background-color:  #708090;
+}
+
+#logo {
+	
+	margin-top:  15px;
+	margin-left:  30px;
+}
+
+#dark_top {
+	
+	margin-left:  600px;
+}
+
+.reel {
+	width:  230px;
+	height:  25px;
+	background-color:  #eee;
+	color:  #ffffff;
+	position:fixed;
+	left:0;
+	bottom:0;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.reel_header{
+	color:#ddd;
+	background-color:#222;
+	width:230;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-radius: 5px 5px 0px 0px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:3px;
+	padding-bottom:3px;
+	cursor:pointer;
+}
+
+.reel_theatre_name {
+	width:150px;
+	overflow-x:hidden;
+	color:#ddd;
+	margin-left:5px;	
+}
+
+.reel_prev_list_container {
+	height:310px;
+	width:100%;
+	overflow-y:auto;	
+}
+
+.url_input {
+	font-size:11px;
+	padding:3px;
+	width: 160px;
+	margin-left:5px
+}
+
+.add_url_text {
+	font-size:11px;
+	color: #555;
+	margin-left:5px;
+}
+
+.video_prev_container {
+	background-color:#708090;
+	background-image: url('/images/reel2.png');
+	padding:5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius:5px;
+	height: 86px;
+	width:  200px;
+}
+
+.video_prev_container_active {
+	background-color:#bbb;
+	background-image: url('/images/reel2.png');
+	padding:5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius:5px;
+	height: 86px;
+	width:  200px;
+}
+
+.video_prev_inner{
+	height: 82px;
+	width: 180px;
+	margin-left: 11px;
+}
+	
+.video_prev_title {
+	color:#000;
+	float:right;
+	font-size:12px;
+	margin-left:80px;
+	margin-top:-80px;
+}
+
+.video_prev_thumbWrapper {
+	
+	height:  82px;
+}
+
+.video_prev_thumb {
+	height:60px;
+	width:75px;
+	margin-top: 5px;
+	
+}
+
+
+.login_container {
+	font-size:12px;	
+	background-color:#222;
+	border-radius: 0px 5px 5px 0px;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	position:fixed;
+	left:0px;
+	color:#f8f8f8;
+	top:100px;
+	display:none;
+	padding:5px;
+}
+
+.login_input {
+	width:200px;
+	height:20px;	
+}
+
+.search_wrapper {
+padding:5px;	
+}
+
+.username_sign_out_container {
+	position:fixed;
+	top:15px;
+	right:220px;	
+}
+.user_name {
+	color:#ddd;	
+	font-size:12px;
+	margin-right:10px;
+}
+.user_name:hover {
+	color:#b22222;	
+}
+
+
+
+#id_theatreTopic{
+	margin-left:  60px;
+}
+
+.ytplayer{
+	align: center;
+}
+
+
+.main_box
+{
+    width:770px;
+    background-color: #080808;/*#f8f8f8;*/
+    height: 500px;
+    margin-top:  0px;
+    margin-left:  auto;
+    margin-right:  auto;
+    color:  #4d4d4d;
+}
+
+.chat_container {
+	height:23px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-radius:5px 5px 0px 0px;
+	background-color:#fff;
+	width:250px;
+	position:fixed;
+	right:5px;
+	bottom:0;
+}
+
+.num_viewers {
+	font-size:11px;
+	margin-left:50px;
+	margin-right:10px;	
+}
+
+.chat_header {
+	background-color:#222;
+	border-radius:5px 5px 0px 0px;
+	padding-left:5px;
+	padding-top: 2px;
+	padding-bottom:2px;
+	color:#eee;
+	cursor:pointer;	
+}
+
+.chat_content {
+	height:120px;
+	width:235px;
+	padding-right:5px;
+	padding-left:5px;
+	padding-top: 3px;
+	background-color:#fff;
+	overflow-x: hidden;
+    overflow-y: auto;
+    font-family: arial,sans-serif;
+    font-size:12px;
+}
+
+.chat_textarea {
+	height:36px;
+	width: 235px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:5px;
+	font-family: arial,sans-serif;
+	font-size:12px;
+}
+
+.chat_submit {
+	display:none;	
+}
+
+.chat_username {
+	color:#000;
+	font-weight:bold;	
+}
+
+.chat_msg {
+	color:#000;	
+}
+
+.minimize_button {
+	float:right; 
+	width:10px;
+	height:10px;
+	font-size:16px;
+	margin-right:15px;
+}
+
+.minimize_button:hover {
+	cursor:pointer;	
+
+}
+
+.switch_screens_container {	
+	position:fixed;
+	right:5px;
+	top:0px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	border-radius:0px 0px 5px 5px;
+	width:200px;
+	height:30px;
+	background-color:#bbb;
+	font-size:12px;	
+	overflow:hidden;
+}
+
+.switch_screens_header {
+	height:20px;
+	width:190px;
+	padding:5px;
+	font-size:15px;	
+	background-color:#222;
+	border-radius:0px 0px 5px 5px;
+	color:#eee;
+	text-align:center;
+}
+
+.switch_screens_header:hover {
+	cursor:pointer;
+	color:#708090;
+}
+
+.new_screen_button {
+	padding:5px;
+	font-size:14px;	
+}
+
+.new_screen_button:hover {
+	color:blue;
+	cursor:pointer;
+}
+
+.all_theatres_container {
+	width:100%;
+	height:270px;
+	overflow:auto;
+}
+
+.vote_down{
+	background-image: url('/images/good_tomato_grey.png');
+	width: 34px;
+	height: 39px;
+	margin-top: -45px;
+	margin-left: -140px;
+}
+
+.vote_down:hover{
+	cursor:pointer;
+	background-image: url('/images/good_tomato_color.png');
+	width: 34px;
+	height: 39px;
+	margin-top: -45px;
+	margin-left: -140px;
+}
+
+.rotton{
+	background-image: url('/images/rotton_tomato_grey.png');
+	width: 34px;
+	height: 39px;
+	margin-top: -45px;
+	margin-left: -140px;
+}
+
+.thumbs_up{
+	background-image: url('/images/thumbs_up.png');
+	width: 42px;
+	height: 46px;
+	margin-left: -200px;
+}
+
+.thumbs_up:hover{
+	background-image: url('/images/thumbs_up_star.png');
+	cursor: pointer;
+	width: 42px;
+	height: 46px;
+	margin-left: -200px;
+}
+
+.thumbs_up_clicked{
+	background-image: url('/images/thumbs_up_clicked.png');
+	width: 42px;
+	height: 46px;
+	margin-left: -200px;
+}
+
+.rating{
+	margin-top:-30px;
+	margin-left: -80px;
+}
+
+.video_submitter {
+	margin-left: 50px;
+}
+
+.theatreInList {
+	padding-top:5px;
+	padding-left:5px;
+	padding-righ:5px;
+	margin:3px;
+	background-color:#e5e5e5;
+	width:95%;
+	height:70px;
+	margin-left:auto;
+	margin-right:auto;	
+	overflow:hidden;
+}
+
+.theatreInList:hover {
+	cursor:pointer;
+	color: #000;	
+	background-color:#708090;
+}
+
+.topic_container {
+	float:right;
+	width:130px;
+	font-size:14px;
+}
+
+.desc_container {
+	font-size:11px;	
+}
+
+
+.reel_count_container {
+	width:30px;
+	float:left;	
+	font-size:11px;
+}
+.reel_count_num {
+	font-size:34px;	
+}
+
